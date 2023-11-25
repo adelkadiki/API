@@ -1,0 +1,44 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+<body>
+    
+  <form action="/newuser" method="post">
+
+    <input type="text" placeholder="Name" name="name">
+    <input type="text" placeholder="Department" name="department">
+    <button >Submit</button>
+
+  </form>
+
+
+<ul>
+    <li> <a href="/about">About</a> </li>
+</ul>
+    <h3> Welcome to Main EJS page</h3>
+        
+    <% info.forEach(a =>{ %>
+        
+   <h3> <span><%= a.name; %></span>  - <span><%= a.department %></span> - <span> <a class="del" data-id="<%= a.id %>">Delete</a> </span>  </h3>
+   
+    <% }); %>
+
+      <script>
+
+        var theId = document.querySelector("a.del");
+        theId.addEventListener('click', e =>{
+        var api = '/delete/'+theId.dataset.id;
+
+        fetch(api, { method: 'DELETE' });
+
+        }).then()
+        .catch(err => console.log(err))
+
+      </script>
+  </body>
+</html> -->
