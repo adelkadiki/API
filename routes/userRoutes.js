@@ -2,15 +2,16 @@ const express = require('express');
 const router = express.Router();
 const {getUsers, postUser, deleteUser, getUser, updateUser, 
         registerUser, loginUser, userName} = require('../controllers/userController');
-const protect = require('../middlewares/authMiddleware');         
+const {protect, restrict, forgotPassword} = require('../middlewares/authMiddleware');         
 
 // Authentication 
 
 router.post('/register', registerUser);
 router.post('/login', loginUser);
+router.get('/forgotPassword', forgotPassword);
 
-// Authentication
-router.get('/', getUsers);
+// User
+router.get('/users', protect, restrict, getUsers);
 router.get('/userName/:email', userName);
 //router.route('/').get(getUsers).post(postUser);
 //router.get('/', protect, getUsers);

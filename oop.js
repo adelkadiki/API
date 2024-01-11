@@ -1,6 +1,7 @@
 // class Test{
 
 const { compareSync } = require("bcryptjs");
+const crypto = require('crypto');
 
 //     constructor(x, y){
 
@@ -44,5 +45,8 @@ const { compareSync } = require("bcryptjs");
 
 // console.log(newArr);
 
-const obj = {a:'a vlue', b:'b value'};
-Object.values(obj).map(e => e+' added part').map(e => console.log(e)) ;
+// const obj = {a:'a vlue', b:'b value'};
+// Object.values(obj).map(e => e+' added part').map(e => console.log(e)) ;
+
+
+

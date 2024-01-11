@@ -113,7 +113,7 @@ const generateToken = (id)=>{
     return jwt.sign({id}, process.env.TOKEN_SECRET, {expiresIn: '1d'});
 }
 
-// Get users 
+// Get all users 
 const getUsers = asyncHanlder (async (req, res)=>{
 
     const users = await User.find();
@@ -155,7 +155,7 @@ const updateUser = asyncHanlder( async (req, res)=>{
 } );
 
 
-// Post users
+// Post user
 const postUser = asyncHanlder (async (req, res)=>{
 
     const user = new User();
@@ -165,7 +165,7 @@ const postUser = asyncHanlder (async (req, res)=>{
 
 
 
-// Delete users
+// Delete user
 const deleteUser = asyncHanlder (async (req, res)=>{
 
     const id = req.params.id;

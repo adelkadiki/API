@@ -24,6 +24,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(errorHandler);
 // middleware of authentication router
 app.use('/authen',authRouter);
+app.use('/user', userRoute);
 
 
 process.on('uncaughtException', (err)=>{
@@ -57,11 +58,6 @@ process.on('uncaughtException', (err)=>{
 // }));
 
 
-app.get('/test', (req, res)=>{
-
-    res.send('The response');
-
-});
 
 // Error hanlder function
 // const asyncErrorHandler = (func)=>{
